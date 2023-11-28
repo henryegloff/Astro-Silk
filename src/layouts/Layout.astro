@@ -25,9 +25,9 @@ const { page_title, page_description } = Astro.props;
 			<p><a href={site_url}>{site_title}</a></p>
 			<nav>
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Example Page 1</a></li>
-					<li><a href="#">Example Page 2</a></li>
+					<li><a href={site_url}>Home</a></li>
+					<li><a href={site_url}/about>About</a></li>
+					<li><a href={site_url}/contact>Contact</a></li>
 				</ul>
 			</nav>
 		</header>
