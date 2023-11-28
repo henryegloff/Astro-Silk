@@ -2,4 +2,4 @@
 
 Hi, this is an ultra basic website starter template I have started cobbling together using Astro.
 
-Live Demo: [welcome-to-astro-silk.vercel.app](welcome-to-astro-silk.vercel.app)
+Demo: [welcome-to-astro-silk.vercel.app](welcome-to-astro-silk.vercel.app)
