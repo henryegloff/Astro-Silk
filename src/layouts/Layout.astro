@@ -28,9 +28,9 @@ const currentPath = pathname.slice(1); // remove the first "/";
 			<p><a href="/">{site_title}</a></p>
 			<nav>
 				<ul>
-					<li><a href="/" class={currentPath === "" ? "active" : ""}>Home</a></li>
-        				<li><a href="/about" class={currentPath === "about" ? "active" : ""}>About</a></li>
-        				<li><a href="/contact" class={currentPath === "contact" ? "active" : ""}>Contact</a></li>
+					<li><a href="/">Home</a></li>
+        				<li><a href="/about">About</a></li>
+        				<li><a href="/contact">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -44,6 +44,18 @@ const currentPath = pathname.slice(1); // remove the first "/";
 		</footer>
 	</body>
 </html>
+
+<script>
+  const nav = document.querySelector(".navbar");
+  const navLinks = nav.querySelectorAll("a");
+  const currentURL = window.location.href;
+  navLinks.forEach((link) => {
+    if (link.href === currentURL) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
 <style is:global>
 	nav a.active{
 		opacity:.5
