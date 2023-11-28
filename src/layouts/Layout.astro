@@ -8,6 +8,10 @@ interface Props {
 }
 
 const { page_title, page_description } = Astro.props;
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+
 ---
 
 <!doctype html>
@@ -24,9 +28,9 @@ const { page_title, page_description } = Astro.props;
 			<p><a href="/">{site_title}</a></p>
 			<nav>
 				<ul>
-					<li><a href="/">Home</a></li>
-        				<li><a href="/about">About</a></li>
-        				<li><a href="/contact">Contact</a></li>
+					<li><a href="/" class={currentPath === "" ? "active" : ""}>Home</a></li>
+        				<li><a href="/about" class={currentPath === "about" ? "active" : ""}>About</a></li>
+        				<li><a href="/contact" class={currentPath === "contact" ? "active" : ""}>Contact</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -41,5 +45,7 @@ const { page_title, page_description } = Astro.props;
 	</body>
 </html>
 <style is:global>
-	
+	nav a.active{
+		opacity:.5
+	}
 </style>
