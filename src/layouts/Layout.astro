@@ -1,21 +1,21 @@
+const site_title = "Site Title";
+const site_url = "https://welcome-to-astro-silk.vercel.app/";
+
 ---
 interface Props {
-	title: string;
-	description: string;
+	page_title: string;
+	page_description: string;
 }
 
+const { page_title, page_description } = Astro.props;
 
-const { title, description } = Astro.props;
-
-const site_title = "Astro Template";
-const site_url = "https://welcome-to-astro-silk.vercel.app/";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>{title}</title>
-		<meta name="description" content={description} />
+		<title>{page_title}</title>
+		<meta name="description" content={page_description} />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -30,7 +30,7 @@ const site_url = "https://welcome-to-astro-silk.vercel.app/";
 		</main>
 
 		<footer>
-			<p>&copy; {title}</p>
+			<p>&copy; {site_title}</p>
 		</footer>
 	</body>
 </html>
