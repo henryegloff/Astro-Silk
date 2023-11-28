@@ -18,7 +18,15 @@ const { title = "Page Title", description = "Page description..." } = Astro.prop
 		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
+		<header>
+			<h1>{title}</h1>
+		</header>
+
 		<slot />
+
+		<footer>
+			<p>&copy;{title}</p>
+		</footer>
 	</body>
 </html>
 <style is:global>
