@@ -1,7 +1,6 @@
 
 ---
 const site_title = "Site Title";
-const site_url = "https://welcome-to-astro-silk.vercel.app/";
 
 interface Props {
 	page_title: string;
@@ -22,12 +21,12 @@ const { page_title, page_description } = Astro.props;
 	</head>
 	<body>
 		<header>
-			<p><a href={site_url}>{site_title}</a></p>
+			<p><a href="/">{site_title}</a></p>
 			<nav>
 				<ul>
-					<li><a href={site_url}>Home</a></li>
-        				<li><a href={site_url + '/about'}>About</a></li>
-        				<li><a href={site_url + '/contact'}>Contact</a></li>
+					<li><a href="/">Home</a></li>
+        				<li><a href="/about">About</a></li>
+        				<li><a href="/contact">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
