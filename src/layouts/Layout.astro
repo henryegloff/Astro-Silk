@@ -1,14 +1,14 @@
 
 ---
+const site_title = "Site Title";
+const site_url = "https://welcome-to-astro-silk.vercel.app/";
+
 interface Props {
 	page_title: string;
 	page_description: string;
 }
 
 const { page_title, page_description } = Astro.props;
-const site_title = "Site Title";
-const site_url = "https://welcome-to-astro-silk.vercel.app/";
-
 ---
 
 <!doctype html>
@@ -23,6 +23,13 @@ const site_url = "https://welcome-to-astro-silk.vercel.app/";
 	<body>
 		<header>
 			<p><a href={site_url}>{site_title}</a></p>
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Example Page 1</a></li>
+					<li><a href="#">Example Page 2</a></li>
+				</ul>
+			</nav>
 		</header>
 
 		<main>
