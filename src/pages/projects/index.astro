@@ -1,0 +1,55 @@
+---
+import Layout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+import { Image } from "astro:assets";
+
+const posts = await getCollection("projects");
+
+const {
+  title = "Projects",
+  description = "Projects description.",
+  image = "./../images/placeholder-square.webp",
+} = Astro.props;
+
+// const { posts } = Astro.props;
+---
+
+<Layout title={title} description={description} image={image}>
+  <section>
+    <ul>
+      {
+        posts.map((post) => (
+            <li>
+              <a href={`/projects/${post.slug}/`}>
+
+              <!-- <Image
+                  src={post.data.image}
+                  alt={post.data.description}
+              /> -->
+
+                <Image
+                  width={720}
+                  height={360}
+                  src={post.data.image}
+                  alt={post.data.description}
+                />
+
+                <h4 class="title">{post.data.title}</h4>
+              </a>
+            </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>
+<style>
+section li img {
+    width: 100%;
+}
+
+section {
+    width:90%;
+    max-width:900px;
+}
+</style>
